@@ -5,6 +5,7 @@
 # El valor máximo leído.
 
 
+
 # 2) Leer números enteros hasta que el numero leído sea múltiplo de 6. Se pide informar:
 # Cantidad de datos leído.
 # El valor mínimo y cuantas veces se repite.
