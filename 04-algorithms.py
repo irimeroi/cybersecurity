@@ -42,23 +42,3 @@ while True:
 print(f"La temperatura mínima del día fue: {minima_temp}")
 print(f"La temperatura máxima del día fue: {maxima_temp}")
 
-# Del censo realizado en una población se conocen los siguientes datos:
-# • Día de nacimiento (2 dígitos)• Mes de nacimiento (2 dígitos)• Año de nacimiento (4 dígitos)• Género (‘M’: masculino / ‘F’: femenino)
-# Ingresar estos datos hasta que el día de nacimiento sea cero. Calcular y mostrar:
-# a) Cuántos nacimientos hubo en el mes de octubre de todos los años.
-# b) Cuántos nacimientos hubo antes del 9 de julio de 1970.
-# c) Cuántos nacimientos de mujeres hubo en la primavera de 1942.
-# d) Género de la persona más anciana (solo existe una)
-
-
-
-
-
-
-
-
-
-
-# Por cada alumno de la facultad se dispone de la siguiente información:• Número de legajo• Nota promedio de finales rendidos
-# a) Ingresar estos datos hasta que el número de legajo sea cero.
-# b) Determinar los números de legajo de los dos mejores promedios. c) Mostrarlos.

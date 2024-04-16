@@ -75,7 +75,7 @@ while numeros != 0:
         print("Número o caracter inválido")
 print(f"La cantidad de números positivos es: {numeros_positivos}")
 
-# Ingresar 10 números mayores a 3 y menores a 8. Mostrar el valor ingresado ennúmero y letras.
+# Ingresar 10 números mayores a 3 y menores a 8. Mostrar el valor ingresado en número y letras.
 
 # Leer dos números, mostrar el siguiente menú pudiendo seleccionar alguna opción yrepetir esta operación hasta que seleccione 5
 # Menú principal 1. Sumar 2. Restar 3. Multiplicar 4. Dividir 5. SalirSeleccione una opción

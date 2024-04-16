@@ -9,3 +9,5 @@ print(yearlySalary)
 # 50% de actividades entregadas
 # final: 2 ejercicios similares al parcial
 # preguntas sobre el ejercicio y preguntas generales de la materia
+
+porcentaje = (cantidad/total)*100
