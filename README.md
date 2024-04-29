@@ -1,1 +1,1 @@
-# cibersecurity
+# cybersecurity
