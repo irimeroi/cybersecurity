@@ -10,4 +10,5 @@ print(yearlySalary)
 # final: 2 ejercicios similares al parcial
 # preguntas sobre el ejercicio y preguntas generales de la materia
 
-porcentaje = (cantidad/total)*100
+# porcentaje = (cantidad/total)*100
+

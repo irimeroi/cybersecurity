@@ -5,6 +5,34 @@
 # ingresado y debe mostrar el resultado y; para cualquier otro valor de operación, el
 # programa debe informar si el numero ingresado es par, impar o nulo
 
+for numeros in range(1, 3, 1):
+    numero = int(input("Ingrese números enteros positivos: "))
+    while numero < 0:
+        numero = int(input("El número debe ser mayor o igual a 0: "))
+
+    user_choice = int(input(f"Ingrese una opción:\n1. Devuelve el factorial\n2. Calcula la potencia\n3. Determina si el número es par, impar, o nulo: "))
+
+    if user_choice == 1:
+        factorial = 1
+        for i in range(numero, 0, -1):
+            print(i)
+            factorial *= i
+        print("El factorial del número ingresado es: ", factorial)
+    elif user_choice == 2:
+        potencia = int(input("Ingrese la potencia a la cual quisiera elevar el número: "))
+        resultado = numero ** potencia
+        print(resultado)
+    elif user_choice == 3:
+        if numero == 0:
+            print("El número es nulo.")
+        elif numero % 2 == 0:
+            print("El número es par.")
+        else:
+            print("El número es impar.")
+    else:
+        user_choice = int(input("Por favor ingrese un número del 1 al 3: "))
+
+# ------------------------------------------------------------------------------
 # 2) Una empresa liquida sueldos según la categoría de cada empleado y paga por hora
 # según la siguiente tabla:
 # • categoría 1: $4500

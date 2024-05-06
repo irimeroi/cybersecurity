@@ -24,7 +24,7 @@ while True:
         break
 print(f"La temperatura mínima del día fue: {temp_minima}")
 print(f"La temperatura máxima del día fue: {temp_maxima}")
-
+# ------------------------------------------------------------
 temperaturas = []
 while True:
     input_temp = int(input("Ingresar temperaruras: "))

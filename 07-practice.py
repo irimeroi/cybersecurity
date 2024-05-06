@@ -53,3 +53,11 @@ if cantHijos > 1:
         print("El promedio de edades del encuestado es: ", sumaEdades/cantHijos)
 else:
     encuestasF += 1
+
+if min_hijos == 0 or cantHijos < min_hijos:
+    min_hijos = cantHijos
+    min_doc = documento
+    encuesta = int(input("Ingrese el número de encuesta: "))
+
+while encuesta > 2 or encuesta < 0:
+    encuesta = int(input("Error - ingrese el número de encuesta: "))
