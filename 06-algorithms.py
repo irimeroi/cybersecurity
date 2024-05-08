@@ -33,6 +33,65 @@ for numeros in range(1, 3, 1):
         user_choice = int(input("Por favor ingrese un número del 1 al 3: "))
 
 # ------------------------------------------------------------------------------
+# Se ingresan el mes (validar entre 0 y 12), la cotizacion de dolár blue (validar que no sea negativo) y la cotizacion del dolar mep(Validar que no esa negativa) hasta que el mes sea cero.
+# Calcular y mostrar:
+# a) EL mes donde la diferencia entre el dolar blue y el dolar mep sea minima
+# b) El promedio de la cotizacion del dolar blue en los meses pares.
+# c) El mes donde se registro el maximo valor del dolar mep
+# d) Mostrar la diferencia entre el dolar blue y el mep de cada mes ingresado
+# e) Calcular el porcentaje de la diferencia del dolar blue con respecto al dolar mep
+cont = 1
+cont_blue = 0
+acum = 0
+minimo = 0
+mes_minimo = 0
+maximo = 0
+mes_maximo = 0
+
+mes = int(input("Ingrese el mes (0-12): "))
+while mes < 0 or mes > 12:
+    print("Error - Ingrese nuevamente el mes.")
+    mes = int(input("Ingrese el mes (0-12): "))
+    
+while mes != 0:
+    cont += 1
+    blue = int(input("Ingrese cotización dolar blue: "))
+    while blue <= 0:
+        print("Error = ingrese nuevamente la cotización.")
+        blue = int(input("Ingrese cotización dolar blue: "))
+    mep = int(input("Ingrese cotización dolar mep: "))
+    while mep <= 0:
+        print("Error = ingrese nuevamente la cotización.")
+        mep = int(input("Ingrese cotización dolar mep: "))
+    
+    if cont == 1:
+        minimo = blue-mep
+        maximo = blue
+    if blue-mep <= minimo:
+        minimo = blue-mep
+        mes_minimo = mes
+        mes_minimo = 1
+        mes_maximo = 1
+    if mes % 2 == 0:
+        acum = acum - blue
+        cont_blue += 1
+    if blue <= maximo:
+        maximo = blue
+        mes_maximo = mes
+    print(f"La diferencia entre el dólar blue y el dólar mep es: {blue - mep}")
+    print(f"El porcentaje de la diferencia entre el dólar blue y el dólar mep es: {(blue-mep)*100/blue}")
+    
+    mes = int(input("Ingrese el mes (0-12): "))
+    while mes < 0 or mes > 12:
+        print("Error - Ingrese nuevamente el mes.")
+        mes = int(input("Ingrese el mes (0-12): "))
+print(f"El mínimo de la diferencia fue en el mes {mes_minimo}")
+if cont_blue != 0:
+    print(f"El promedio es {acum/cont_blue}")
+else:
+    print("No se puede calcular el promedio.")
+
+# ------------------------------------------------------------------------------
 # 2) Una empresa liquida sueldos según la categoría de cada empleado y paga por hora
 # según la siguiente tabla:
 # • categoría 1: $4500
@@ -45,7 +104,64 @@ for numeros in range(1, 3, 1):
 # empleado.
 # b) Calcular el total de sueldos que paga la empresa.
 # c) Determinar cuántos empleados de cada categoría hay.
+categoria1 = 0
+categoria2 = 0
+categoria3 = 0
+categoria4 = 0
+total_saldos = 0
 
+categoria = int(input("Ingrese la categoría (1, 2, 3 o 4): "))
+while categoria < 1 or categoria > 4:
+    print("Error - intente nuevamente.")
+    categoria = int(input("Ingrese la categoría (1, 2, 3 o 4): "))
+
+while categoria != 0:
+    if categoria < 1 or categoria > 4:
+        print("Por favor ingrese un número del 1 al 4: ")
+    else:
+        if categoria == 1:
+            horas_trabajadas = int(input("Ingrese las horas trabajadas: "))
+            sueldo_bruto = horas_trabajadas * 4500
+            sueldo_neto = sueldo_bruto - (sueldo_bruto*17/100)
+            print("El sueldo bruto del empleado es: ", sueldo_bruto, "y el sueldo neto es: ", sueldo_neto)
+            categoria1 += 1
+            total_saldos += sueldo_bruto
+
+        elif categoria == 2:
+            horas_trabajadas = int(input("Ingrese las horas trabajadas: "))
+            sueldo_bruto = horas_trabajadas * 5000
+            sueldo_neto = sueldo_bruto - (sueldo_bruto*17/100)
+            print("El sueldo bruto del empleado es: ", sueldo_bruto, "y el sueldo neto es: ", sueldo_neto)
+            categoria1 += 2
+            total_saldos += sueldo_bruto
+
+        elif categoria == 3:
+            horas_trabajadas = int(input("Ingrese las horas trabajadas: "))
+            sueldo_bruto = horas_trabajadas * 5500
+            sueldo_neto = sueldo_bruto - (sueldo_bruto*17/100)
+            print("El sueldo bruto del empleado es: ", sueldo_bruto, "y el sueldo neto es: ", sueldo_neto)
+            categoria1 += 3
+            total_saldos += sueldo_bruto
+
+        elif categoria == 4:
+            horas_trabajadas = int(input("Ingrese las horas trabajadas: "))
+            sueldo_bruto = horas_trabajadas * 5800
+            sueldo_neto = sueldo_bruto - (sueldo_bruto*17/100)
+            print("El sueldo bruto del empleado es: ", sueldo_bruto, "y el sueldo neto es: ", sueldo_neto)
+            categoria1 += 4
+            total_saldos += sueldo_bruto
+
+        else:
+            print("Ha habido un error, por favor intente nuevamente")    
+    categoria = int(input("Ingrese la categoría (1, 2, 3 o 4): "))
+
+print("La cantidad de empleados en la categoría 1 es: ", categoria1)
+print("La cantidad de empleados en la categoría 2 es: ", categoria2)
+print("La cantidad de empleados en la categoría 3 es: ", categoria3)
+print("La cantidad de empleados en la categoría 4 es: ", categoria4)
+print(f"El total de sueldos que paga la empresa es: {total_saldos}")
+
+# ------------------------------------------------------------------------------
 # 3) Se realiza un censo en la provincia de Buenos Aires. Por cada persona censada se
 # ingresa género (1.F, 2.M), edad y estudios cursados (1 para estudios primarios, 2
 # para estudios secundarios o 3 para estudios terciarios).
