@@ -216,6 +216,80 @@ print(f"La cantidad de clientes en la fila del tipo 1 es: {cantidad_tipo1}, del 
 print(f"El cliente más joven es {cliente_mas_joven} con una edad de {edad_min} años.")
 print(f"El promedio de edades de la categoría 3 es: {total_edades/cantidad_tipo3}")
 
+# ------------------------------------------------------------------------------
+# El cine Atlas de Flores, decide digitalizar el control de ventas de entradas para las películas infantiles que estarán en cartelera durante las vacaciones de invierno.
+# Las películas en cartel son: “La Sirenita” y “Super Mario Bros”
+# Para la venta de las entradas se pide al usuario que ingrese la siguiente información:
+#   Cantidad de entradas. (valor entero)
+#   Letra de sala. (Valor char A o B)
+#   Nombre de película. (cadena de caracteres)
+#   Lleva pochoclos (Si o No)
+# Calcular el porcentaje de ventas entradas que incluyen pochoclos, sobre el total de entradas.
+# Determinar la película para la que se vendieron más entradas.
+
+# La sala A tiene una capacidad de 50 personas, mostrar una leyenda en el caso que se supere el 50% de ocupación.
+# Validar el ingreso correcto de la letra de la sala. (Sólo A o B)
+# La carga Finaliza cuando en cantidad de entradas se ingrese un 0 
+
+cantidad_entradas = int(input("Ingrese la cantidad de entradas (0 para terminar): "))
+total_entradas = 0
+entradas_con_pochoclos = 0
+entradas_ls = 0
+entradas_mb = 0
+sala_a = 0
+
+while cantidad_entradas < 0 or cantidad_entradas > 150:
+    print("Error - el número ingresado debe ser mayor a 0 y menor a 150.")
+    cantidad_entradas = int(input("Ingrese la cantidad de entradas (0 para terminar): "))
+
+while cantidad_entradas != 0:
+    sala = input("Ingrese la sala (A o B): ")
+    while sala != "A" and sala != "B":
+        print("Por favor elija A o B en mayúsculas.")
+        sala = input("Ingrese la sala (A o B): ")
+    
+    pelicula = input("Ingrese el nombre de la película: ")
+    while pelicula != "MB" and pelicula != "LS":
+        print("La película seleccionada no está disponible en este momento.")
+        pelicula = input("Ingrese el nombre de la película: ")
+        
+    pochoclos = input("Lleva pochoclos? (SI/NO): ")
+    while pochoclos != "SI" and pochoclos != "NO":
+        print("Por favor ingrese SI o NO en mayúsculas.")
+        pochoclos = input("Lleva pochoclos? (SI/NO): ")
+        
+    total_entradas += cantidad_entradas
+    if pochoclos == "SI":
+        entradas_con_pochoclos += cantidad_entradas
+        
+    if pelicula == "LS":
+        entradas_ls += cantidad_entradas
+    else:
+        entradas_mb += cantidad_entradas
+        
+    if sala == "A":
+        sala_a += cantidad_entradas
+        if sala_a >= 25:
+            print("La sala A superó el 50% de su ocupación.")
+    
+    cantidad_entradas = int(input("Ingrese la cantidad de entradas (0 para terminar): "))
+    while cantidad_entradas < 0:
+        print("Error - el número ingresado debe ser mayor a 0.")
+        cantidad_entradas = int(input("Ingrese la cantidad de entradas (0 para terminar): "))
+    
+print(f"El total de entradas vendidas es: {total_entradas}")
+print(f"Entradas con pochoclos: {entradas_con_pochoclos}")
+print(f"El porcentaje de entradas que incluyen pochoclos es del {((entradas_con_pochoclos*100)/total_entradas)}%")
+if entradas_ls > entradas_mb:
+    print(f"La película con mayor cantidad de entradas es La Sirenita con {entradas_ls} entradas vs Mario Bros con {entradas_mb}.")
+elif entradas_ls < entradas_mb:
+    print(f"La película con mayor cantidad de entradas es Mario Bros con {entradas_mb} entradas vs La Sirenita con {entradas_ls}.")
+else:
+    print(f"Ambas películas vendieron una misma cantidad de entradas con {entradas_ls} cada una.")
+    
+print(f"Cantidad de entradas sala A: {sala_a}")
+
+# ------------------------------------------------------------------------------
 # 3) Se realiza un censo en la provincia de Buenos Aires. Por cada persona censada se
 # ingresa género (1.F, 2.M), edad y estudios cursados (1 para estudios primarios, 2
 # para estudios secundarios o 3 para estudios terciarios).
