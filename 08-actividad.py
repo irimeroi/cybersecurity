@@ -6,3 +6,4 @@
 # Calcular el promedio de los elementos ubicados en posiciones pares.
 # Insertar después del elemento máximo, la mitad del mismo.
 # Mostrar el arreglo ordenado de mayor a menor.
+
