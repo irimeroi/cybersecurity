@@ -17,7 +17,6 @@
 #     n = int(input("Ingrese un número: "))
 
 import random
-
 def calcular(a):
     cont = 0
     for i in range(1, a):
